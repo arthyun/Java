@@ -1,11 +1,9 @@
 package practice.springBoot.controller;
 
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //@RestController
 @Controller
@@ -28,7 +26,7 @@ public class HelloController {
         return "hello " + name; // 입력한 param에 따라 body값을 내려줌
     }
 
-    /* 실제 사용 방식 */
+    /* 실제 사용 방식(json을 만들어줌~) */
     @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
@@ -36,15 +34,13 @@ public class HelloController {
         hello.setName(name);
         return hello;
     }
-
-    // getter/setter 클래스 생성 (json을 만들어줌~)
+    /* getter/setter 클래스 생성 */
     static class Hello {
         private String name;
 
         public String getName() {
             return name;
         }
-
         public void setName(String name) {
             this.name = name;
         }
