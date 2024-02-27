@@ -14,6 +14,7 @@ import lombok.*;
 @Table(name = "product") // 매핑될 디비 테이블명
 
 // 엔티티 클래스는 디비와 맞닿는 핵심 클래스이다.
+// Entity 클래스는 Setter를 만들지 않는다.
 public class ProductEntity {
     @Id
     String productId;
