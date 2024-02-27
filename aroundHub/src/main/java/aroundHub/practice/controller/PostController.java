@@ -15,13 +15,14 @@ import java.util.Map;
 @RequestMapping("/api/v1/post-api")
 
 public class PostController {
-    @Operation(summary = "PostController1", description = "PostController2") // Swagger-ui
     @PostMapping("/default")
+    @Operation(summary = "default", description = "default") // Swagger-ui
     public String postMethod(){
         return "Hello Method!";
     }
 
     @PostMapping("/member1")
+    @Operation(summary = "member1", description = "member1") // Swagger-ui
     public String postMember(@RequestBody Map<String, Object> postData){
         StringBuilder sb = new StringBuilder();
         postData.entrySet().forEach(map -> {
@@ -31,6 +32,7 @@ public class PostController {
     }
 
     @PostMapping("/member2")
+    @Operation(summary = "member2", description = "member2") // Swagger-ui
     public MemberDTO postMemberDto(@RequestBody MemberDTO memberDTO){
         return memberDTO;
     }

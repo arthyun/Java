@@ -12,8 +12,8 @@ public class HelloController {
     // 구식
     // @RequestMapping(value = "/hello", method = RequestMethod.GET)
     // 신식
-    @Operation(summary = "HelloController1", description = "HelloController2") // Swagger-ui
-    @GetMapping("hello")
+    @GetMapping("/firstHello")
+    @Operation(summary = "firstHello", description = "firstHello") // Swagger-ui
     public String hello(){
         return "Hello World!";
     }
