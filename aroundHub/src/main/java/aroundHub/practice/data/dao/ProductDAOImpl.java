@@ -3,7 +3,9 @@ package aroundHub.practice.data.dao;
 import aroundHub.practice.data.entity.ProductEntity;
 import aroundHub.practice.data.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductDAOImpl implements ProductDAO {
     ProductRepository productRepository;
 
