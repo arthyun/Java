@@ -16,7 +16,7 @@ import lombok.*;
 // 엔티티 클래스는 디비와 맞닿는 핵심 클래스이다.
 // Entity 클래스는 Setter를 만들지 않는다.
 public class ProductEntity {
-    @Id
+    @Id // productId가 primary라는 것을 알려주기 위함
     String productId;
     String productName;
     Integer productPrice;

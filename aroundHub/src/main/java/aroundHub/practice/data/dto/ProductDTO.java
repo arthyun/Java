@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-
 public class ProductDTO {
     private String productId;
     private String productName;

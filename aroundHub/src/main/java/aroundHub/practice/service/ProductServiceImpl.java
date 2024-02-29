@@ -11,12 +11,12 @@ public class ProductServiceImpl implements ProductService {
     ProductDataHandler productDataHandler;
 
     @Autowired
-    public ProductServiceImpl(ProductDataHandler productDataHandler){
+    public ProductServiceImpl(ProductDataHandler productDataHandler) {
         this.productDataHandler = productDataHandler;
     }
 
     @Override
-    public ProductDTO saveProduct(String productId, String productName, int productPrice, int productStock){
+    public ProductDTO saveProduct(String productId, String productName, int productPrice, int productStock) {
         // 구현코드 작성란
         ProductEntity productEntity = productDataHandler.saveProductEntity(productId, productName, productPrice, productStock);
         ProductDTO productDTO = new ProductDTO(productEntity.getProductId(), productEntity.getProductName(), productEntity.getProductPrice(), productEntity.getProductStock());
@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO getProduct(String productId){
+    public ProductDTO getProduct(String productId) {
         // 구현코드 작성란
         ProductEntity productEntity = productDataHandler.getProductEntity(productId);
         ProductDTO productDTO = new ProductDTO(productEntity.getProductId(), productEntity.getProductName(), productEntity.getProductPrice(), productEntity.getProductStock());

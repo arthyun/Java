@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/product-api")
 public class ProductController {
-    private ProductService productService;
+    private final ProductService productService;
 
     @Autowired
-    public ProductController(ProductService productService){
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
-    @GetMapping("/product/{variable}")
-    public ProductDTO getProduct(@PathVariable String productId){
+    @GetMapping("/product/{productId}")
+    public ProductDTO getProduct(@PathVariable String productId) {
         return productService.getProduct(productId);
     }
 
     @PostMapping("/product")
-    public ProductDTO createProduct (@RequestBody ProductDTO productDTO){
+    public ProductDTO createProduct(@RequestBody ProductDTO productDTO) {
         String productId = productDTO.getProductId();
         String productName = productDTO.getProductName();
         int productPrice = productDTO.getProductPrice();
@@ -34,7 +34,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/product/{productId}")
-    public ProductDTO deleteProduct(@PathVariable String productId){
+    public ProductDTO deleteProduct(@PathVariable String productId) {
         return null;
     }
 }
