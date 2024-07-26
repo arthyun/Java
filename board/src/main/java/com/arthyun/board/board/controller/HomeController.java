@@ -1,6 +1,5 @@
-package com.arthyun.board.controller;
+package com.arthyun.board.board.controller;
 
-import com.arthyun.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

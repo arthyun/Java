@@ -1,4 +1,4 @@
-package com.arthyun.board.dto;
+package com.arthyun.board.board.dto;
 
 import lombok.Getter;
 import lombok.Setter;
